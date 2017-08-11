@@ -14,8 +14,8 @@ import java.awt.event.ActionEvent;
 public class login {
 
 	private JFrame frmLogin;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField textStudentname;
+	private JTextField textStudentID;
 
 	/**
 	 * Launch the application.
@@ -60,27 +60,29 @@ public class login {
 		StudentID.setBounds(70, 116, 125, 35);
 		frmLogin.getContentPane().add(StudentID);
 		
-		textField = new JTextField();
-		textField.setBounds(216, 50, 115, 30);
-		frmLogin.getContentPane().add(textField);
-		textField.setColumns(10);
+		textStudentname = new JTextField();
+		textStudentname.setBounds(216, 50, 115, 30);
+		frmLogin.getContentPane().add(textStudentname);
+		textStudentname.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(216, 121, 115, 29);
-		frmLogin.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		textStudentID = new JTextField();
+		textStudentID.setBounds(216, 121, 115, 29);
+		frmLogin.getContentPane().add(textStudentID);
+		textStudentID.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// login code
-				if(Studentname.getText().equals("guri") && StudentID.getText().equals("123")) {
+				if(textStudentname.getText().equals("guri") && textStudentID.getText().equals("123")) {
 					JOptionPane.showMessageDialog(null, "correct credential");
 					frmLogin.dispose();
 					
-					//open the next window
-					CourseInfo Obj = new CourseInfo();
+					////open the next window
+					studentInfo Obj = new studentInfo();
 					Obj.setVisible(true);
+					
+					
 				}
 				
 			}
