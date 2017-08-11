@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JSeparator;
 
 public class login {
 
@@ -87,7 +88,19 @@ public class login {
 				
 			}
 		});
-		btnNewButton.setBounds(164, 191, 125, 35);
+		btnNewButton.setBounds(195, 201, 125, 35);
 		frmLogin.getContentPane().add(btnNewButton);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(26, 192, 398, -2);
+		frmLogin.getContentPane().add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(36, 192, 388, -2);
+		frmLogin.getContentPane().add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(26, 192, 398, 2);
+		frmLogin.getContentPane().add(separator_2);
 	}
 }

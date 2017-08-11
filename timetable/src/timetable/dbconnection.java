@@ -27,13 +27,13 @@ public class dbconnection {
 			
 			//3. execute a SQL query
 			
-			ResultSet MyRs = myStmt.executeQuery("select * from ");
+			ResultSet MyRs = myStmt.executeQuery("select * from timetable");
 		
 			
 			//4. Process the result object
 			
 	         while (MyRs.next()){
-	        	 System.out.println(MyRs.getString ("username")+ "" + MyRs.getString("password"));
+	        	 System.out.println(MyRs.getString ("Studentname")+ "" + MyRs.getString("Student_ID"));
 	         }
 	         
 	         myStmt.close();

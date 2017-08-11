@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JSeparator;
 
 public class studentInfo extends JFrame {
 
@@ -49,7 +51,7 @@ public class studentInfo extends JFrame {
 		btnNewButton.setBounds(33, 301, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Name");
+		JLabel lblNewLabel = new JLabel("Name\t\t\t");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setBounds(33, 24, 89, 35);
 		contentPane.add(lblNewLabel);
@@ -60,12 +62,12 @@ public class studentInfo extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Courses");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_2.setBounds(109, 131, 89, 35);
+		lblNewLabel_2.setBounds(117, 131, 89, 35);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("ID");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_3.setBounds(33, 83, 89, 35);
+		lblNewLabel_3.setBounds(33, 83, 62, 35);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("course_id1");
@@ -107,5 +109,19 @@ public class studentInfo extends JFrame {
 		JButton btnNewButton_4 = new JButton("soft");
 		btnNewButton_4.setBounds(294, 278, 89, 23);
 		contentPane.add(btnNewButton_4);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(10, 131, 424, 2);
+		contentPane.add(separator);
+		
+		JLabel lblNewLabel_8 = new JLabel("Gurminder");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_8.setBounds(198, 24, 137, 35);
+		contentPane.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("123");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_9.setBounds(211, 83, 96, 35);
+		contentPane.add(lblNewLabel_9);
 	}
 }
