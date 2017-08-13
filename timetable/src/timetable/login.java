@@ -75,7 +75,8 @@ public class login {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// login code
-				if(textStudentname.getText().equals("guri") && textStudentID.getText().equals("123")) {
+				DatabaseHelper databaseHelper = new DatabaseHelper();
+				if(databaseHelper.getLoginDetails(textStudentname.getText(), Integer.parseInt(textStudentID.getText())) != null) {
 					JOptionPane.showMessageDialog(null, "correct credential");
 					frmLogin.dispose();
 					
@@ -84,6 +85,8 @@ public class login {
 					Obj.setVisible(true);
 					
 					
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect credential. Please try again");
 				}
 				
 			}

@@ -21,7 +21,7 @@ public class CourseInfo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CourseInfo frame = new CourseInfo();
+					CourseInfo frame = new CourseInfo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,12 @@ public class CourseInfo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CourseInfo() {
+	public CourseInfo(String courseName) {
+		
+		DatabaseHelper databaseHelper = new DatabaseHelper();
+		
+		CourseData courseData = databaseHelper.getCourseDate(courseName);
+		
 		setTitle("CourseInfo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 456, 375);
@@ -75,6 +80,29 @@ public class CourseInfo extends JFrame {
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_5.setBounds(34, 262, 95, 23);
 		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblSubject = new JLabel(courseData.getSubject());
+		lblSubject.setBounds(129, 28, 46, 14);
+		contentPane.add(lblSubject);
+		
+		JLabel lblId = new JLabel(courseData.getId());
+		lblId.setBounds(129, 67, 46, 14);
+		contentPane.add(lblId);
+		
+		JLabel lblTeacher = new JLabel(courseData.getTeacher());
+		lblTeacher.setBounds(129, 121, 46, 14);
+		contentPane.add(lblTeacher);
+		
+		JLabel lblTime = new JLabel(courseData.getTime1());
+		lblTime.setBounds(129, 180, 185, 14);
+		contentPane.add(lblTime);
+		
+		JLabel lblTime_1 = new JLabel(courseData.getTime2());
+		lblTime_1.setBounds(129, 224, 185, 17);
+		contentPane.add(lblTime_1);
+		
+		JLabel lblTime_2 = new JLabel(courseData.getTime3());
+		lblTime_2.setBounds(129, 268, 185, 17);
+		contentPane.add(lblTime_2);
 	}
-
 }

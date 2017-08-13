@@ -18,7 +18,11 @@ import javax.swing.JSeparator;
 public class studentInfo extends JFrame {
 
 	private JPanel contentPane;
-
+	
+	String COURSE_SYS_ER = "sys Er";
+	String COURSE_DATABASE = "dbms";
+	String COURSE_PM = "pm";
+	String COURSE_SW = "soft";
 	/**
 	 * Launch the application.
 	 */
@@ -90,25 +94,29 @@ public class studentInfo extends JFrame {
 		lblNewLabel_7.setBounds(159, 282, 62, 14);
 		contentPane.add(lblNewLabel_7);
 		
-		JButton btnNewButton_1 = new JButton("dbms");
+		JButton btnNewButton_1 = new JButton(COURSE_DATABASE);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		btnNewButton_1.setBounds(294, 160, 89, 23);
 		contentPane.add(btnNewButton_1);
+		addActionListenerToPrint(btnNewButton_1, COURSE_DATABASE);
 		
-		JButton btnNewButton_2 = new JButton("sys Er");
+		JButton btnNewButton_2 = new JButton(COURSE_SYS_ER);
 		btnNewButton_2.setBounds(294, 199, 89, 23);
 		contentPane.add(btnNewButton_2);
+		addActionListenerToPrint(btnNewButton_2, COURSE_SYS_ER);
 		
-		JButton btnNewButton_3 = new JButton("pm");
+		JButton btnNewButton_3 = new JButton(COURSE_PM);
 		btnNewButton_3.setBounds(294, 239, 89, 23);
 		contentPane.add(btnNewButton_3);
+		addActionListenerToPrint(btnNewButton_3, COURSE_PM);
 		
-		JButton btnNewButton_4 = new JButton("soft");
+		JButton btnNewButton_4 = new JButton(COURSE_SW);
 		btnNewButton_4.setBounds(294, 278, 89, 23);
 		contentPane.add(btnNewButton_4);
+		addActionListenerToPrint(btnNewButton_4, COURSE_SW);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 131, 424, 2);
@@ -124,4 +132,18 @@ public class studentInfo extends JFrame {
 		lblNewLabel_9.setBounds(211, 83, 96, 35);
 		contentPane.add(lblNewLabel_9);
 	}
+	
+	private void addActionListenerToPrint(JButton printButton, String courseName) {
+		printButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// write the condition here
+
+				contentPane.setVisible(false);
+				CourseInfo obj = new CourseInfo(courseName);
+				obj.setVisible(true);
+
+			}
+		});
+
+}
 }
