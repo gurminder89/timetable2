@@ -7,8 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class CourseInfo extends JFrame {
 
@@ -21,7 +24,7 @@ public class CourseInfo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CourseInfo frame = new CourseInfo(null);
+					CourseInfo frame = new CourseInfo(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +36,7 @@ public class CourseInfo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CourseInfo(String courseName) {
+	public CourseInfo(String courseName, JDialog popUp) {
 		
 		DatabaseHelper databaseHelper = new DatabaseHelper();
 		
@@ -50,6 +53,7 @@ public class CourseInfo extends JFrame {
 		JButton btnNewButton = new JButton("Close");
 		btnNewButton.setBounds(341, 303, 89, 23);
 		contentPane.add(btnNewButton);
+		addCloseActionListener(btnNewButton, this, popUp);
 		
 		JLabel lblNewLabel = new JLabel("Subject");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -94,15 +98,28 @@ public class CourseInfo extends JFrame {
 		contentPane.add(lblTeacher);
 		
 		JLabel lblTime = new JLabel(courseData.getTime1());
-		lblTime.setBounds(129, 180, 185, 14);
+		lblTime.setBounds(129, 180, 254, 14);
 		contentPane.add(lblTime);
 		
 		JLabel lblTime_1 = new JLabel(courseData.getTime2());
-		lblTime_1.setBounds(129, 224, 185, 17);
+		lblTime_1.setBounds(129, 224, 264, 17);
 		contentPane.add(lblTime_1);
 		
 		JLabel lblTime_2 = new JLabel(courseData.getTime3());
-		lblTime_2.setBounds(129, 268, 185, 17);
+		lblTime_2.setBounds(129, 268, 269, 17);
 		contentPane.add(lblTime_2);
+	}
+
+	private void addCloseActionListener(JButton btnNewButton, JFrame frame, JDialog popUp) {
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				frame.setVisible(false);
+				contentPane.setVisible(false);
+				popUp.dispose();
+				//System.exit(0);
+			}
+		});
+		
 	}
 }

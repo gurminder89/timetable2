@@ -77,11 +77,11 @@ public class login {
 				// login code
 				DatabaseHelper databaseHelper = new DatabaseHelper();
 				if(databaseHelper.getLoginDetails(textStudentname.getText(), Integer.parseInt(textStudentID.getText())) != null) {
-					JOptionPane.showMessageDialog(null, "correct credential");
+					JOptionPane.showMessageDialog(null, "login successfully");
 					frmLogin.dispose();
 					
 					////open the next window
-					studentInfo Obj = new studentInfo();
+					studentInfo Obj = new studentInfo(textStudentname.getText(), textStudentID.getText());
 					Obj.setVisible(true);
 					
 					
