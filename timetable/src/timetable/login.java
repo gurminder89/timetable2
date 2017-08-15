@@ -105,5 +105,14 @@ public class login {
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(26, 192, 398, 2);
 		frmLogin.getContentPane().add(separator_2);
+		
+		JButton btnNewButton_1 = new JButton("close");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frmLogin.dispose();
+			}
+		});
+		btnNewButton_1.setBounds(46, 207, 89, 23);
+		frmLogin.getContentPane().add(btnNewButton_1);
 	}
 }
