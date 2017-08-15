@@ -106,7 +106,7 @@ public class login {
 		separator_2.setBounds(26, 192, 398, 2);
 		frmLogin.getContentPane().add(separator_2);
 		
-		JButton btnNewButton_1 = new JButton("close 1");
+		JButton btnNewButton_1 = new JButton("test 2");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frmLogin.dispose();
